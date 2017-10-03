@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { render } from 'react-dom';
 import { Grid } from 'react-virtualized';
 import list from './table.json';
-
-console.log(list[0]);
 
 function cellRenderer ({ columnIndex, key, rowIndex, style }) {
   return (
