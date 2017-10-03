@@ -1,10 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import { Grid } from 'react-virtualized';
-import data from './data.json';
-
-// Grid data as an array of arrays
-const list = data;
+import list from './table.json';
 
 function cellRenderer ({ columnIndex, key, rowIndex, style }) {
   return (
@@ -12,21 +9,22 @@ function cellRenderer ({ columnIndex, key, rowIndex, style }) {
       key={key}
       style={style}
     >
-      {list[rowIndex][columnIndex].value}
+      {
+        list[rowIndex][columnIndex].value
+      }
     </div>
   )  
 }
 
-// Render your grid
-ReactDOM.render(
+render(
   <Grid
     cellRenderer={cellRenderer}
-    columnCount={list[0].length}
+    columnCount={list.length}
     columnWidth={100}
-    height={600}
+    height={300}
     rowCount={list.length}
     rowHeight={30}
-    width={1500}
+    width={900}
   />,
   document.getElementById('root')
-);
+)
