@@ -1,11 +1,23 @@
 import React, {Component} from 'react';
 import { render } from 'react-dom';
 import { Grid } from 'react-virtualized';
-import list from './table.json';
+import list from './fakeJSON.json';
+
+const onCellClick = (e) => {
+  if (e.target.getAttribute('data-editable') === 'true') e.target.setAttribute('contenteditable', true);
+};
 
 function cellRenderer({ columnIndex, key, rowIndex, style }) {
+  const type = list[rowIndex][columnIndex].type;
+  const editable = list[rowIndex][columnIndex].editable;
+
   return (
-    <div key={key} style={style}>
+    <div className="cell"
+         key={key}
+         style={style}
+         data-editable={ editable }
+         data-type={ type }
+         onClick={ onCellClick }>
       {
         list[rowIndex][columnIndex].value
       }
@@ -17,11 +29,11 @@ render(
   <Grid
     cellRenderer={cellRenderer}
     columnCount={list[0].length}
-    columnWidth={100}
+    columnWidth={130}
     height={600}
     rowCount={list.length}
-    rowHeight={30}
+    rowHeight={40}
     width={1500}
   />,
   document.getElementById('root')
-)
+);
