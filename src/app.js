@@ -3,6 +3,9 @@ import { render } from 'react-dom';
 import { Grid } from 'react-virtualized';
 import list from './fakeJSON.json';
 
+import 'react-virtualized/styles.css';
+import './style.css';
+
 const onCellMouseDown = (e) => {
   if (e.target.getAttribute('data-editable') !== 'true') e.preventDefault();
 };
