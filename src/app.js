@@ -1,47 +1,66 @@
-import React, {Component} from 'react';
-import { render } from 'react-dom';
-import { Grid } from 'react-virtualized';
-import list from './fakeJSON.json';
+import React, {Component} from "react";
+import {render} from 'react-dom';
+import {AgGridReact} from "ag-grid-react";
 
-import 'react-virtualized/styles.css';
-import './style.css';
+import "ag-grid/dist/styles/ag-grid.css";
+import "ag-grid/dist/styles/theme-fresh.css";
 
-const onCellMouseDown = (e) => {
-  if (e.target.getAttribute('data-editable') !== 'true') e.preventDefault();
+class Grid extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            columnDefs: this.createColumnDefs(),
+            rowData: this.createRowData()
+        }
+    }
+
+    onGridReady(params) {
+        this.gridApi = params.api;
+        this.columnApi = params.columnApi;
+
+        this.gridApi.sizeColumnsToFit();
+    }
+
+    createColumnDefs() {
+        return [
+            {headerName: "Make", field: "make"},
+            {headerName: "Model", field: "model"},
+            {headerName: "Price", field: "price"}
+        ];
+    }
+
+    createRowData() {
+        return [
+            {make: "Toyota", model: "Celica", price: 35000},
+            {make: "Ford", model: "Mondeo", price: 32000},
+            {make: "Porsche", model: "Boxter", price: 72000}
+        ];
+    }
+
+    render() {
+        let containerStyle = {
+            height: 115,
+            width: 500
+        };
+
+        return (
+            <div style={containerStyle} className="ag-fresh">
+                <h1>Simple ag-Grid React Example</h1>
+                <AgGridReact
+                    // properties
+                    columnDefs={this.state.columnDefs}
+                    rowData={this.state.rowData}
+
+                    // events
+                    onGridReady={this.onGridReady}>
+                </AgGridReact>
+            </div>
+        )
+    }
 };
-
-const onCellClick = (e) => {
-  if (e.target.getAttribute('data-editable') === 'true') e.target.setAttribute('contenteditable', true);
-};
-
-function cellRenderer({ columnIndex, key, rowIndex, style }) {
-  const type = list[rowIndex][columnIndex].type;
-  const editable = list[rowIndex][columnIndex].editable;
-
-  return (
-    <div className="cell"
-         key={key}
-         style={style}
-         data-editable={ editable }
-         data-type={ type }
-         onMouseDown={ onCellMouseDown }
-         onClick={ onCellClick }>
-      {
-        list[rowIndex][columnIndex].value
-      }
-    </div>
-  )  
-}
 
 render(
-  <Grid
-    cellRenderer={cellRenderer}
-    columnCount={list[0].length}
-    columnWidth={130}
-    height={600}
-    rowCount={list.length}
-    rowHeight={40}
-    width={1500}
-  />,
+  <Grid />,
   document.getElementById('root')
 );

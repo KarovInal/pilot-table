@@ -21,9 +21,12 @@
   "homepage": "https://github.com/KarovInal/react-redux-table#readme",
   "dependencies": {
     "Faker": "^0.7.2",
+    "ag-grid": "^13.3.1",
+    "ag-grid-react": "^13.3.0",
     "json-loader": "^0.5.7",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-dom-factories": "^1.0.2",
     "react-virtualized": "^9.10.1"
   },
   "devDependencies": {
