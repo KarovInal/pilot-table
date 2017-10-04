@@ -18,13 +18,16 @@ for (let i = 0; i < 1000; i++) {
     rowJSON.push(
       {
         type: 'number',
-        value: faker.random.number()
+        value: faker.random.number(),
+        editable: !!randomInteger(0, 1)
       }, {
         type: 'date',
-        value: `${randomInteger(0, 30)}-${randomInteger(1, 12)}-${randomInteger(1900, 2000)}`
+        value: `${randomInteger(0, 30)}-${randomInteger(1, 12)}-${randomInteger(1900, 2000)}`,
+        editable: !!randomInteger(0, 1)
       }, {
         type: 'string',
-        value: `${faker.name.firstName()} ${faker.name.lastName()}`
+        value: `${faker.name.firstName()} ${faker.name.lastName()}`,
+        editable: !!randomInteger(0, 1)
       }
     );
   }
