@@ -1,0 +1,107 @@
+{
+  "table": {
+    "width": "1000px",
+    "height": "1000px",
+    "rows": "3",
+    "columns": "3",
+    "fixedHeaders": true,
+    "fixedLeftColumn": true
+  },
+  "columns": [
+    {
+      "name": "morph",
+      "width": "10px",
+      "resizable": true
+    },
+    {
+      "name": "executive",
+      "width": "10px",
+      "resizable": true
+    },
+    {
+      "name": "synthesizing",
+      "width": "10px",
+      "resizable": false
+    }
+  ],
+  "cells": [
+    [
+      {
+        "id": "dfced94f-089b-4176-a4fa-4687aa483830",
+        "type": "data",
+        "editable": false,
+        "value": "Лука",
+        "tooltip": "tooltipValue",
+        "styles": ""
+      },
+      {
+        "id": "9d21dfd6-c03b-42d6-b934-7a2d987a4313",
+        "type": "number",
+        "editable": false,
+        "value": "Валерий",
+        "tooltip": "tooltipValue",
+        "styles": ""
+      },
+      {
+        "id": "7585c174-005c-40b3-9e75-d77777eb4f47",
+        "type": "number",
+        "editable": false,
+        "value": "Владислав",
+        "tooltip": "tooltipValue",
+        "styles": ""
+      }
+    ],
+    [
+      {
+        "id": "a70f5905-c411-4f78-89fd-0a8e80fb9f7d",
+        "type": "string",
+        "editable": true,
+        "value": "Галина",
+        "tooltip": "tooltipValue",
+        "styles": ""
+      },
+      {
+        "id": "849f25ab-9b75-4927-8d89-73e1d68ed010",
+        "type": "string",
+        "editable": true,
+        "value": "Марина",
+        "tooltip": "tooltipValue",
+        "styles": ""
+      },
+      {
+        "id": "fb05967f-9d05-4ed2-b9e9-29afc28a6ff8",
+        "type": "number",
+        "editable": false,
+        "value": "Антонина",
+        "tooltip": "tooltipValue",
+        "styles": ""
+      }
+    ],
+    [
+      {
+        "id": "adc0e1cd-f3c5-4e42-8669-9d52985b4e41",
+        "type": "number",
+        "editable": true,
+        "value": "Анжела",
+        "tooltip": "tooltipValue",
+        "styles": ""
+      },
+      {
+        "id": "d30f6fd4-0c83-488e-bfa0-e172bea29846",
+        "type": "string",
+        "editable": false,
+        "value": "Антон",
+        "tooltip": "tooltipValue",
+        "styles": ""
+      },
+      {
+        "id": "36ce8cfb-63e1-4416-96f3-b3c92ad9b08b",
+        "type": "data",
+        "editable": true,
+        "value": "Константин",
+        "tooltip": "tooltipValue",
+        "styles": ""
+      }
+    ]
+  ]
+}
