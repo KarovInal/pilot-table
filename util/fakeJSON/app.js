@@ -9,7 +9,7 @@ const randomInteger = (min, max) => {
   return rand;
 };
 
-const types = ['number', 'data', 'string'];
+const types = ['number', 'date', 'string'];
 
 let fakeJSON = {
   table: {
