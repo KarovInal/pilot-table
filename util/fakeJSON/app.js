@@ -11,23 +11,20 @@ const randomInteger = (min, max) => {
 
 let fakeJSON = [];
 
-for (let i = 0; i < 1000; i++) {
+for (let i = 0; i < 20; i++) {
   const rowJSON = [];
 
-  for (let ii = 0; ii <= 66; ii++) {
+  for (let ii = 0; ii <= 10; ii++) {
     rowJSON.push(
       {
         type: 'number',
         value: faker.random.number(),
-        editable: !!randomInteger(0, 1)
       }, {
         type: 'date',
         value: `${randomInteger(0, 30)}-${randomInteger(1, 12)}-${randomInteger(1900, 2000)}`,
-        editable: !!randomInteger(0, 1)
       }, {
         type: 'string',
         value: `${faker.name.firstName()} ${faker.name.lastName()}`,
-        editable: !!randomInteger(0, 1)
       }
     );
   }
